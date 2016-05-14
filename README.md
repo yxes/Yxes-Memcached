@@ -25,19 +25,22 @@ Yxes::Memcached - Cache::Memcached::Fast wrapper
 
 ### SYNOPSIS
 
+
+
+**use the defaults**
+
 ```perl
-
-      # [ use the defaults and simply use ]
-
-
       use Yxes::Memcached;
   
       my $mem = Yxes::Memcached->new;
 
          $mem->set('MYVAR' => 'myval');
       my $var = $mem->get('MYVAR');
+```
 
-      # [ and/or use this as you would Cache::Memcached::Fast ]
+or use this as you would [Cache::Memcached::Fast](http://search.cpan.org/~kroki/Cache-Memcached-Fast-0.23/lib/Cache/Memcached/Fast.pm)
+
+```perl
 
       use Yxes::Memcached;
 
@@ -62,15 +65,15 @@ move the memcached server to a new location and just update the *'hosts'*
 file without having to find all the scripts on your machine that use
 your server.
 
-* new
+#### new
 
-Use the same way you would Cache::Memcached::Fast
+Use the same way you would [Cache::Memcached::Fast](http://search.cpan.org/~kroki/Cache-Memcached-Fast-0.23/lib/Cache/Memcached/Fast.pm)
 
-     Optional Attributes:
+Optional Attributes:
 
-     - `servers => [ { address => 'host:port', weight => #.## }, 'host:port' }]`
-     - `namespace => 'name:'`
-     - `connect_timeout => #.# `
+- `servers => [ { address => 'host:port', weight => #.## }, 'host:port' }]`
+- `namespace => 'name:'`
+- `connect_timeout => #.# `
 
 the default server is added as *'memcached:11211'* and can be set in your
 */etc/hosts* file
@@ -81,17 +84,12 @@ the default server is added as *'memcached:11211'* and can be set in your
 
 in your */etc/hosts* file
 
-    * assuming your memcache server runs on your local machine
-
-         `127.0.0.1 localhost memcached`
-
-    * otherwise the IP it does run on
-
-         `192.168.12.34 memcached`
+* assuming your memcache server runs on your local machine **`127.0.0.1 localhost memcached`**
+* otherwise the IP it does run on **`192.168.12.34 memcached`**
 
 #### PROGRAM
 
-The server is the part that we want to default this case so canonically just state:
+We want to use the default server [*`memcached:11211`*] in this case:
 
 ```perl
          use Yxes::Memcached;
@@ -143,10 +141,11 @@ none, nada, zilch... good luck
 
 ### AUTHOR
 
-Stephen D. Wells
-CPAN ID: YXES
-yxes@cpan.org
-GitHub: [yxes/Yxes-Memcached](http://www.github.com/yxes/Yxes-Memcached)
+    Stephen D. Wells
+    CPAN ID: YXES
+    yxes@cpan.org
+    
+GitHub: [yxes/Yxes-Memcached](https://github.com/yxes/Yxes-Memcached)
 
 ### COPYRIGHT
 
