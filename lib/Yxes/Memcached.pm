@@ -1,23 +1,11 @@
 package Yxes::Memcached;
 use strict;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use constant DEFAULT_SERVER => 'memcached:11211';
 
 use base 'Cache::Memcached::Fast';
-
-sub new {
-    my $class = shift;
-    my @args = @_;
-
-  # if they specifically defined servers we'll use that.
-    push (@args, 'servers', [DEFAULT_SERVER]) if (!grep /servers/, @args); 
-    
-$class->SUPER::new({@args});
-}
-
-__END__
 
 =head1 NAME
 
@@ -25,7 +13,7 @@ Yxes::Memcached - Cache::Memcached::Fast wrapper
 
 =head1 VERSION
 
- 0.03
+ 0.04
 
 =head1 SYNOPSIS
 
@@ -60,6 +48,33 @@ the hosts file to point to a real IP number.  The idea is to make
 it very easy to move the memcached server to a new location and
 just update the 'hosts' file without having to find all the
 scripts on your machine that use your server.
+
+
+=head2 new
+
+Use the same way you would Cache::Memcached::Fast
+
+ Optional Attributes:
+
+ - servers => [ { address => 'host:port', weight => #.## },
+                'host:port' }]
+ - namespace => 'name:'
+ - connect_timeout => #.#
+
+the default server is added as 'memcached:11211' and can be
+set in your /etc/hosts file
+
+=cut
+
+sub new {
+    my $class = shift;
+    my @args = @_;
+
+  # if they specifically defined servers we'll use that.
+    push (@args, 'servers', [DEFAULT_SERVER]) if (!grep /servers/, @args); 
+    
+$class->SUPER::new({@args});
+}
 
 =head1 EXAMPLES
 

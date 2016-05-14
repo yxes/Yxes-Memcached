@@ -9,7 +9,7 @@ WriteMakefile(
     AUTHOR       => 'Stephen D. Wells (yxes@cpan.org)',
     ABSTRACT     => 'Cache::Memcached::Fast wrapper',
     PREREQ_PM    => {
-		     'Cache::Memcached::Fast' => 0.19,
-                     'Test::Simple' => 0.44,
+		     'Cache::Memcached::Fast' => 0.23,
+                     'Test::Simple' => 1.001014,
                     },
 );
