@@ -1,5 +1,10 @@
 Revision history for Perl module Yxes::Memcached
 
+0.04 Sat May 14 11:04:35 2016
+     - Documentation Updates
+
+     to persuade pod-coverage that we come in peace
+
 0.03 Mon Jul 1 16:06:43 2013
 
      - Documentation Updates

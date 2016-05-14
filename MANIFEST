@@ -6,3 +6,4 @@ Changes
 Makefile.PL
 lib/Yxes/Memcached.pm
 t/001_load.t
+t/pod-coverage.t
